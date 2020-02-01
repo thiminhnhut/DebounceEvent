@@ -32,6 +32,10 @@ DebounceEvent::DebounceEvent(uint8_t pin, uint8_t mode, unsigned long delay, uns
     _init(pin, mode, delay, repeat);
 }
 
+DebounceEvent &DebounceEvent::setCallback(DEBOUNCE_EVENT_CALLBACK_SIGNATURE) {
+    this->callback = callback;
+    return *this;
+}
 
 void DebounceEvent::_init(uint8_t pin, uint8_t mode, unsigned long delay, unsigned long repeat) {
 

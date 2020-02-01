@@ -52,8 +52,9 @@ class DebounceEvent {
         bool pressed() { return (_status != _defaultStatus); }
         unsigned long getEventLength() { return _event_length; }
         unsigned long getEventCount() { return _event_count; }
+        DebounceEvent &setCallback(DEBOUNCE_EVENT_CALLBACK_SIGNATURE);
 
-    private:
+      private:
 
         uint8_t _pin;
         uint8_t _mode;
